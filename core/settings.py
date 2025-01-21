@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -58,6 +59,13 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=1440), # Set expiration for access token
+    'ALGORITHM': 'HS256', # The algorithm used to sign the token.
+    'SIGNING_KEY': SECRET_KEY, # Your Django secret key to sign the token
+    'AUTH_HEADER_TYPES': ('Bearer',) # the type of authorization header
 }
 
 
