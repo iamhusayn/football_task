@@ -1,0 +1,11 @@
+###
+POST http://127.0.0.1:8000/users/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "Asabe",
+    "first_name": "Asabena",
+    "last_name": "Joe",
+    "email": "asabenjoe@gmail.com",
+    "role": "new_user",
+}

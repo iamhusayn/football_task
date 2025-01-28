@@ -18,6 +18,7 @@ class TaskView(APIView):
     task_copy = request.data.copy()
     task_copy['user'] = request.user.id
     serializer = TaskSerializer(data=task_copy)    #serializer = TaskSerializer(data=request.data)
+    
     if serializer.is_valid():
       serializer.save()
       return Response({"message": "Post method sucessful"})
